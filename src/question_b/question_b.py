@@ -17,4 +17,10 @@ def get_stock_list():
         Stock("GOOG", "Google"),
         Stock("MSFT", "Microsoft"),
           ]
+    
+    with open("stock_file.dat", "w") as file:
+        for stock in stock_list:
+            line = f"{stock.get_symbol()} {stock.get_company_name()}\n"
+            file.write(line)
+            
     return stock_list
